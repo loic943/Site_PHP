@@ -45,7 +45,7 @@ function affiche(string $name, array $params = []): void
  *
  * @return object
  */
-function pdo()
+function pdo(): object
 {
     $pdo = new PDO("pgsql:host=localhost;port=5432;dbname=site", 'site', 'site');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -58,7 +58,7 @@ function pdo()
  * @param string $url
  * @return void
  */
-function redirect(string $url)
+function redirect(string $url): void
 {
     header("Location: $url");
     die();
@@ -69,9 +69,9 @@ function redirect(string $url)
  *
  * @return void
  */
-function admin_only()
+function admin_only(): void
 {
-    if(!$_SESSION['admin'] ?? null) {
+    if (!$_SESSION['admin'] ?? null) {
         redirect('/admin/login.php');
     }
 }
@@ -81,8 +81,30 @@ function admin_only()
  *
  * @return void
  */
-function abort_404()
+function abort_404(): void
 {
     http_response_code(404);
     die();
+}
+
+/**
+ * Vérifie la page courante
+ *
+ * @param string $page
+ * @return boolean
+ */
+function is_on_page(string $page): bool
+{
+    return $_SERVER['SCRIPT_NAME'] === $page;
+}
+
+/**
+ * Vérifie la dossier courant
+ *
+ * @param string $directory
+ * @return boolean
+ */
+function is_on_directory(string $directory): bool
+{
+    return strpos($_SERVER['SCRIPT_NAME'], $directory) === 0;
 }
