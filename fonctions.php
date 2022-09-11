@@ -5,6 +5,18 @@ ini_set('display_errors', 1);
 
 session_start();
 
+if (is_post()) {
+    $previous_errors = [];
+    $_SESSION['previous_errors'] = [];
+    $previous_inputs = [];
+    $_SESSION['previous_inputs'] = [];
+} else {
+    $previous_errors = $_SESSION['previous_errors'] ?? [];
+    $previous_inputs = $_SESSION['previous_inputs'] ?? [];
+    $_SESSION['previous_errors'];
+    $_SESSION['previous_inputs'];
+}
+
 /**
  * Vérifie si formulaire validé
  *
