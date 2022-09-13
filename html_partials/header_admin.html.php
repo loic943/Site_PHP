@@ -25,4 +25,11 @@
             </div>
         </div>
     </nav>
-    <main class="bg-white shadow-xl p-8 w-full">
+    <main class="bg-white shadow-xl p-8 w-full relative">
+    <?php if ($flash = get_flash()) : ?>
+        <div class="absolute right-0">
+            <p class="-mt-6 p-3 shadow-lg bg-green-200 text-green-900" >
+                <?= $flash['message'] ?>
+            </p>
+        </div>
+    <?php endif ?>

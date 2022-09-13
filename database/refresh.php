@@ -22,4 +22,11 @@ $pdo->exec('CREATE TABLE admins (
     password TEXT
 )');
 
+// Création table products
+$pdo->exec('CREATE TABLE products (
+    id SERIAL,
+    name TEXT,
+    description TEXT
+)');
+
 ?>
