@@ -6,10 +6,18 @@ class Product
     public $name;
     public $description;
 
-    public function add_product($name, $description)
+    /**
+     * Ajoute un Produit à la BDD
+     *
+     * @param string $category_id Catégorie
+     * @param string $name Nom du Produit
+     * @param string $description Description du Porduit
+     * @return void
+     */
+    public function add_product(string $category_id, string $name, string $description): void
     {
-        $query = pdo()->prepare('INSERT INTO products (name, description) VALUES (?, ?)');
-        $query->execute([$name, $description]);
+        $query = pdo()->prepare('INSERT INTO products (category_id, name, description) VALUES (?, ?, ?)');
+        $query->execute([$category_id, $name, $description]);
     }
 
     /**
@@ -57,11 +65,16 @@ class Product
         foreach ($params as $key => $value){
             $produit->$key = $value;
         }
-        $query = pdo()->prepare("UPDATE products SET name=?, description=? WHERE id=?");
-        $query->execute([$produit->name, $produit->description, $id]);
+        $query = pdo()->prepare("UPDATE products SET category_id=?, name=?, description=? WHERE id=?");
+        $query->execute([$produit->category_id, $produit->name, $produit->description, $id]);
     }
 
-    public function delete()
+    /**
+     * Efface le produit de la BDD
+     *
+     * @return void
+     */
+    public function delete(): void
     {
         $query = pdo()->prepare("DELETE FROM products WHERE id=?");
         $query->execute([$this->id]);
