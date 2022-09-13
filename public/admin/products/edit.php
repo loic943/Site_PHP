@@ -2,6 +2,7 @@
 require_once(__DIR__ . '/../../../fonctions.php');
 admin_only();
 
+import('Category');
 import('Product');
 $product = (new Product)->get($_GET['id']);
 //var_dump($product);
@@ -10,11 +11,13 @@ $product = (new Product)->get($_GET['id']);
 if (is_post()) {
 
     validate([
+        'categories' => ['required'],
         'name' => ['required'],
         'description' => ['required']
     ]);
 
     $product->set($product->id, [
+        'category_id' => $_POST['categories'],
         'name' => $_POST['name'],
         'description' => $_POST['description']
     ]);
@@ -46,6 +49,15 @@ if (is_post()) {
             <?= $previous_errors['description'] ?>
         </p>
     <?php endif ?>
+    <p class="mb-3 max-w-sm">
+        <label for="categories" class="block text-sm px-3">Categorie</label>
+        <select name="categories" id="gategories" class="border focus:border-black px-3 py-1 w-full bg-gray-100">
+            <?php $categories = (new Category)->get_all() ?>
+            <?php foreach ($categories as $category) : ?>
+                <option value="<?= $category->id ?>"<?= $category->id === $product->category_id ? 'selected' : '' ?> ><?= $category->name ?></option>
+            <?php endforeach ?>
+        </select>
+    </p>
     <p class="mt-6 max-w-sm">
         <button class="border w-full py-1 shadow-lg bg-gray-100">Modifier</button>
     </p>
