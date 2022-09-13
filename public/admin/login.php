@@ -15,8 +15,7 @@ if (is_post()) {
         redirect('/admin/dashboard.php');
     } else {
         $_SESSION['previous_errors']['credentials'] = 'Identifiants incorrects';
-        $_SESSION['previous_inputs']['name'] = $_POST['name'];
-        $_SESSION['previous_inputs']['password'] = $_POST['password'];
+        save_inputs();
         redirect('/admin/login.php');
     }
 }
@@ -26,11 +25,11 @@ if (is_post()) {
 <?php affiche('header', ['title' => 'Connexion Admin']) ?>
 
 <div class="min-w-screen min-h-screen flex justify-center items-start bg-gray-200">
-    
+
     <div class="bg-white shadow-lg p-8 mt-8">
-        
+
         <h1 class="text-xl mb-4">Connexion Admin</h1>
-    
+
         <form method="post">
             <?php if (isset($previous_errors['credentials'])) : ?>
                 <p class="w-full border border-red-900 bg-red-200 text-red-900 mb-4 px-3 py-1">
