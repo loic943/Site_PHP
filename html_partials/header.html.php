@@ -7,4 +7,4 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title><?= $title ?? 'Site_PHP' ?></title>
 </head>
-<body class="bg-gray-100">
+<body>

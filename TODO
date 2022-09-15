@@ -1,8 +1,16 @@
 
-- récupérer les images pour le design
-- ajouter des images dans Products
-- modifier les images de Products
+# - récupérer les images pour le design
+- créer un desgin pour présentation d'un produit
+    -> Lien page courante actif
+    # -> crée footer
+    # -> créer header
+    # -> créer nav sticky
+    # -> créer background double image
+    # -> créer main 
+- ajouter des images via admin
+- modifier les images depuis admin
 - placeholer images ???
 - créer panier
 
 
+- couleur nav: #b9165a
