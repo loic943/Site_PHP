@@ -1,0 +1,445 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    /* background-color: rgb(107, 127, 141); */
+    height: 20vh;
+    display:flex;
+    justify-content: center;
+}
+
+.header-container{
+    /* background-color: rgb(199, 95, 95); */
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-container > div{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.logo{
+    /* background-color: rgb(49, 100, 100); */
+    display: flex;
+    justify-content: center;
+    height: 70%;
+}
+.logo > img{
+    max-height: 100%;
+}
+
+.bouton{
+    /* background-color: darkseagreen; */
+    height: 20%;
+}
+
+.bouton > button{
+    background-color: #fff;
+    border: 2px solid black;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.bouton > button:hover{
+    background-color:#b9165a;
+    border: none;
+    color: white;
+}
+
+.AB{
+    /* background-color: grey; */
+    height: 50%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-top: 1.2rem;
+    padding-bottom: 5px;
+}
+
+.logo-AB{
+    height: 50%;
+    object-fit: contain;
+}
+
+.certif{
+    /* background-color: darkorange; */
+    height: 50%;
+}
+
+.certif > p{
+    background-color: aquamarine;
+    margin-top: 1px;
+    font-size: 30%;
+    text-align: center;
+
+}
+
+.menu-principal{
+    position: sticky;
+    top: 0;
+}
+
+.toggle{
+    background: #b9165a;
+    color: #fff;
+    display: flex;
+}
+
+.toggle>img{
+    max-width: 1.8rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    cursor: pointer;
+}
+
+.onglets{
+    display: none;
+}
+
+.onglets.visible{
+    background-color: #b9165add;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.onglets li{
+    /* background-color: rgb(158, 154, 154); */
+    border-bottom: 1px solid white;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+
+.onglets a{
+    /* background-color: darkgoldenrod; */
+    display: block;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    padding: 1rem 0;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.onglets a:hover, .onglets a.actif{
+    background-color: #fff;
+    color: #b9165a;
+}
+
+.presentation{
+    background-image: url('../../img/bg_1.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.presentation .titre{
+    color: #fff;
+    font-size: 200%;
+    min-height: 40vh;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.presentation .texte{
+    background-color: white;
+    min-height: 33vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20vw;
+}
+.presentation span{
+    max-width: 800px;
+    padding-left: 15%;
+}
+
+.presentation p{
+    margin: 0;
+    max-width: 900px;
+}
+
+
+main{
+    background-image: url('../../img/bg_2.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.produit{
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+.fiche .prix{
+    font-size: 150%;
+}
+
+.fiche > span{
+    font-size: 80%;
+}
+
+.stock{
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.fiche > button{
+    background-color: #fff;
+    padding: 0.3rem 1rem;
+    border: 1px solid black;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+.fiche > button:hover{
+    background-color:#b9165a;
+    border: 2px solid #b9165a;
+    color: white;
+}
+
+.ingredients{
+    font-size: 60%;
+}
+
+.produit .image-produit{
+    background: url("../../img/rochers-lait.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;;
+    height: 30vh;
+    width: 50vw;
+    border-radius: 10%;
+    overflow: hidden;
+}
+.produit .image-produit > img{
+    object-fit: cover;
+}
+
+.produit .partagez{
+    font-size: 0.9rem;
+}
+.produit .partagez .reseau-social{
+    margin-right: 5px;
+}
+
+.reseau-social .lien-reseau{
+    color: black;
+    background-color: rgba(211, 211, 211, 0.326);
+    border-radius: 5px;
+}
+
+.lien-reseau .icone-reseau > svg{
+    margin-bottom: -3px;
+}
+
+.contact{
+    display: flex;
+    height: 30vh;
+}
+
+.contact-box{
+    background-color: white;
+    height: 50%;
+    max-width: 50%;
+    border: 2px solid #b9165a;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+    transform: translateX(-30%);
+}
+
+.contact-box > img{
+    height: 50%;
+}
+.contact-bouton > button{
+    background-color: #fff;
+    border: 1px solid black;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.contact-bouton > button:hover{
+    background-color:#b9165a;
+    border: 1px solid #b9165a;
+    color: white;
+    font-weight: normal;
+}
+
+
+.footer-gauche P{
+    margin: 0;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+footer span{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.7rem;
+    margin-top: 1rem;
+}
+
+.footer-droite .container-ouvertures{
+    display: flex;
+    justify-content: center;
+    min-width: 210px;
+}
+.footer-droite .container-ouvertures .jours{
+    margin-right: 2vw;
+}
+.footer-droite .container-ouvertures p{
+    margin: 0;
+    font-size: 0.6rem;
+}
+
+.footer-centre{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.footer-centre .logo-footer{
+    display: flex;
+    width: 40%;
+    max-width: 200px;
+    margin: 1rem auto 0 auto;
+}
+
+.footer-centre .facebook{
+    width: 15%;
+    max-width: 70px;
+    margin: 0 auto;
+}
+
+.footer-centre p{
+    margin: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #b9165a;
+    font-weight: 600;
+}
+
+.footer-centre a{
+    color: #b9165a;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+@media  screen and (min-width: 630px) {
+    .header-container{
+        align-items: center;
+    }
+    .header-container > div{
+        width: 30%;
+    }
+    .header-container :nth-child(2){
+        order: 3;
+    }
+    .logo{
+        height: 100%;
+        justify-content: end;
+    }
+    .logo > img{
+        max-height: 100%;
+    }
+    .bouton{
+        display: flex;
+        max-width: 200px;
+    }
+    .AB{
+        height: 80%;
+    }
+    .certif > p{
+        font-size: 0.8vw;
+        text-align: center;
+    }
+
+    .toggle{
+        display: none;
+    }
+
+    .onglets{
+        display: flex;
+        background: #b9165a;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .onglets li{
+        border: none;
+        max-width: 150px;
+    }
+
+    .presentation .titre{
+        width: 60%;
+    }
+
+    .produit{
+        display: flex;
+        justify-content: center;
+    }
+    .produit .image-produit{
+        display: flex;
+        order: 2;
+        width: 40vw;
+        margin: auto 5vw auto 5vw;
+        max-width: 300px;
+    }
+
+    .produit .fiche{
+        width: 40vw;
+        max-width: 350px;
+    }
+
+    footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    footer .footer-droite{
+        order: 3;
+    }
+}
+
